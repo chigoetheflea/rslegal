@@ -1,0 +1,24 @@
+.list-style-none {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+.transition(@delay: 0, @duration: 0.2s) {
+  transition-property: transform, opacity, color, background-color, border-color, box-shadow, top, right, left, bottom, width, height, padding, margin;
+  transition-duration: @duration;
+  transition-timing-function: ease;
+  transition-delay: @delay;
+}
+
+.transition(svg) {
+  transition-property: opacity, fill;
+}
+
+.transition(opacity) {
+  transition-property: opacity;
+}
+
+.transition(label) {
+  transition-property: top, font-size, transform;
+}

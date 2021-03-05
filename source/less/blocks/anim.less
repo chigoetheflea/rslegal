@@ -1,0 +1,27 @@
+.anim__relative,
+.anim__absolute {
+  opacity: 0;
+}
+.anim__relative {
+  position: relative;
+}
+
+.anim__relative-children {
+  & > * {
+    position: relative;
+    opacity: 0;
+  }
+}
+
+@media (max-width: @tablet-width) {
+  .anim__relative,
+  .anim__absolute {
+    opacity: 1;
+  }
+
+  .anim__relative-children {
+    & > * {
+      opacity: 1;
+    }
+  }
+}

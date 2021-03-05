@@ -1,0 +1,71 @@
+.site {
+  overflow: hidden;
+
+  &--light {
+    .site__burger,
+    .site__burger::after,
+    .site__burger::before {
+      background-color: @brown-3;
+    }
+
+    #fp-nav ul li a,
+    .fp-slidesNav ul li a {
+      background-color: @brown-3;
+
+      &:hover,
+      &:focus,
+      &:active,
+      &.active {
+        background-color: @red-2;
+      }
+    }
+
+    .site__langs {
+      a {
+        font-size: 14px;
+        color: @red-2;
+      }
+
+      .current-lang {
+        a {
+          &:hover,
+          &:focus {
+            color: @red-2;
+          }
+        }
+      }
+    }
+  }
+
+  &--inner {
+    overflow: visible;
+  }
+}
+
+@media (max-width: @tablet-width) {
+  .site {
+    overflow: visible;
+  }
+
+  .site__langs {
+    a {
+      color: lighten(@brown-4, 20%);
+
+      &:hover,
+      &:focus {
+        color: @red-2;
+      }
+    }
+
+    .current-lang {
+      a {
+        &:hover,
+        &:focus {
+          color: lighten(@brown-4, 20%);
+        }
+      }
+    }
+  }
+}
+
+

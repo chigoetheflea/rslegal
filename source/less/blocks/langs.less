@@ -1,0 +1,45 @@
+.langs {
+  .transition(0.25s, 0.2s);
+  pointer-events: auto;
+
+  ul {
+    .list-style-none();
+  }
+
+  li {
+    display: inline-block;
+    margin-left: 10px;
+  }
+
+  a {
+    font-size: 14px;
+    color: #ffffff;
+
+    &:hover,
+    &:focus {
+      text-decoration: underline;
+    }
+  }
+}
+
+.current-lang {
+  opacity: 0.5;
+
+  a {
+    cursor: default;
+
+    &:hover,
+    &:focus {
+      color: #ffffff;
+      text-decoration: none;
+    }
+  }
+}
+
+@media (max-width: @tablet-width) {
+  .langs {
+    a {
+      font-weight: 700;
+    }
+  }
+}

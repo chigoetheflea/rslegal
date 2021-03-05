@@ -1,0 +1,167 @@
+.modal {
+  .transition();
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 500;
+
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  height: 100vh;
+
+  background-color: rgba(0, 0, 0, 0);
+
+  pointer-events: none;
+
+  &--open {
+    background-color: @modalBgColor;
+    pointer-events: auto;
+
+    .modal__form-wrapper {
+      transform: translateX(0);
+      opacity: 1;
+    }
+
+    .modal__close {
+      left: -160px;
+    }
+  }
+}
+
+.modal__form-wrapper {
+  .transition(0.3s, 0.5s);
+
+  position: relative;
+  z-index: 510;
+
+  flex-basis: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 125px;
+
+  background-color: @red-2;
+
+  transform: translateX(50%);
+  opacity: 0;
+}
+
+.modal__close {
+  .transition(0.4s, 0.5s);
+
+  position: absolute;
+  top: 50px;
+  left: 0;
+  z-index: 505;
+
+  width: 160px;
+  height: 80px;
+  padding: 0;
+
+}
+
+.modal__cross {
+  position: absolute;
+  top: 50%;
+  right: 40px;
+  z-index: 506;
+
+  width: 20px;
+  height: 20px;
+  margin-top: -10px;
+
+  &::after,
+  &::before {
+    position: absolute;
+    left: 0;
+    top: 50%;
+
+    width: 100%;
+    height: 5px;
+    margin-top: -3px;
+
+    background-color: #ffffff;
+
+    content: "";
+  }
+
+  &::after {
+    transform: skewY(40deg);
+  }
+
+  &::before {
+    transform: skewY(-40deg);
+  }
+}
+
+.modal__form {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-top: 50px;
+}
+
+@media (max-width: @desktop-width) {
+  .modal__form-wrapper {
+    padding: 60px;
+  }
+}
+
+@media (max-width: @tablet-width) {
+  .modal__form {
+    justify-content: flex-start;
+  }
+
+  .modal__form-wrapper {
+    flex-basis: 75%;
+  }
+}
+
+@media (max-width: @mobile-width) {
+  .modal {
+    &--open {
+      .modal__close {
+        left: 20px;
+      }
+    }
+  }
+
+  .modal__close {
+    top: 20px;
+    left: 50px;
+
+    height: 50px;
+    width: 50px;
+
+    &::after {
+      transform: skew(0);
+    }
+  }
+
+  .modal__cross {
+    right: 50%;
+    margin-right: -10px;
+  }
+
+  .modal__form-wrapper {
+    flex-basis: 100%;
+    padding: 30px;
+  }
+
+}
+
+@media (max-width: @mobile-width-3) {
+  .modal__form {
+    margin-top: 20px;
+  }
+}
+
+@media (orientation: landscape) and (max-height: @note-height) and (min-width: @tablet-width) {
+  .modal__form-wrapper {
+    padding: 60px;
+  }
+}
+

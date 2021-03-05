@@ -1,0 +1,162 @@
+.inner-page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding: 100px;
+}
+
+.inner-page__header {
+  display: flex;
+  flex-direction: column;
+}
+
+.inner-page__logo-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.inner-page__slogan {
+  margin:0 0 0 50px;
+}
+
+.inner-page__logo {
+  &[href]:hover,
+  &[href]:focus {
+    opacity: @link-opacity !important;
+  }
+
+  &[href]:active {
+    opacity: @link-opacity + 0.1 !important;
+  }
+}
+
+.inner-page__title {
+  width: 75%;
+  margin-top: 100px;
+  line-height: 1.4;
+}
+
+.inner-page__archive-wrapper {
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  margin-right: -25px;
+  margin-left: -25px;
+}
+
+.inner-page__breadcrumbs {
+  margin-top: 40px;
+}
+
+.inner-page__columns-wrapper {
+  display: flex;
+}
+
+.inner-page__column {
+  &--left {
+    flex-basis: 50%;
+    flex-grow: 1;
+  }
+
+  &--right {
+    margin-left: 150px;
+  }
+}
+
+.inner-page__content {
+  &--flex {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
+.inner-page__publish-time {
+  display: inline-block;
+  margin-top: 15px;
+}
+
+@media (max-width: @desktop-width) {
+  .inner-page {
+    padding: 60px;
+  }
+}
+
+@media (max-width: @tablet-width) {
+  .inner-page__column {
+    &--right {
+      margin-left: 50px;
+    }
+  }
+}
+
+@media (max-width: @tablet-width-2) {
+  .inner-page__title {
+    width: 100%;
+  }
+
+  .inner-page__columns-wrapper {
+    flex-direction: column;
+  }
+
+  .inner-page__column {
+    &--left {
+      flex-basis: 100%;
+    }
+
+    &--right {
+      margin-left: 0;
+    }
+
+    &--mob-second {
+      order: 1;
+      margin-top: 50px;
+    }
+  }
+
+  .inner-page__archive-wrapper {
+    margin-right: 0;
+    margin-left: 0;
+  }
+}
+
+@media (max-width: @mobile-width) {
+  .inner-page {
+    padding: 30px;
+  }
+
+  .inner-page__title {
+    width: 100%;
+  }
+}
+
+@media (max-width: @mobile-width-2) {
+  .inner-page__logo-wrapper {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .inner-page__slogan {
+    margin: 15px 0 0 0;
+  }
+
+  .inner-page__title {
+    margin-top: 75px;
+    font-size: 20px;
+    text-transform: none;
+    letter-spacing: 0.5px;
+  }
+}
+
+@media (max-width: @mobile-width-4) {
+  .inner-page__logo {
+    img {
+      width: 180px;
+      height: auto;
+    }
+  }
+
+  .inner-page__column {
+    &--mob-second {
+      margin-top: 30px;
+    }
+  }
+}

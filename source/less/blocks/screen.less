@@ -1,0 +1,46 @@
+.screen {
+  display: flex;
+  position: relative;
+  padding: 100px;
+  height: 100vh;
+  overflow: hidden;
+
+  &--darkbrown {
+    background-color: @brown-1;
+  }
+
+  &--lightbrown {
+    background-color: @brown-2;
+  }
+
+  &--darkbrown,
+  &--lightbrown {
+    color: #ffffff;
+  }
+}
+
+@media (max-width: @desktop-width) {
+  .screen {
+    padding: 60px;
+  }
+}
+
+@media (max-width: @tablet-width) {
+  .screen {
+    height: auto;
+    min-height: 100vh;
+  }
+}
+
+@media (max-width: @mobile-width) {
+  .screen {
+    padding: 30px;
+  }
+}
+
+@media (orientation: landscape) and (max-height: @note-height) and (min-width: @tablet-width) {
+  .screen {
+    padding: 60px;
+  }
+}
+

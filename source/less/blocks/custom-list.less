@@ -1,0 +1,21 @@
+.custom-list {
+  padding-left: 50px;
+  list-style-type: none;
+
+  li {
+    position: relative;
+
+    &::before {
+      position: absolute;
+      left: -30px;
+      top: 6px;
+
+      width: 12px;
+      height: 11px;
+
+      background: url('../img/list-marker.svg') 50% 50% no-repeat;
+
+      content: "";
+    }
+  }
+}

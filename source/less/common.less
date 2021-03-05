@@ -1,0 +1,62 @@
+html {
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 320px;
+
+  font-family: "Montserrat", "Arial", sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 25px;
+  color: @black;
+
+  background-color: #ffffff;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+
+a {
+  .transition();
+  color: @red-2;
+  text-decoration: none;
+
+  &:hover,
+  &:focus {
+    color: @black;
+  }
+
+  &:active {
+    color: @red-1;
+  }
+}
+
+b, strong {
+  font-weight: 700;
+}
+
+
+@media (max-width: @desktop-width) {
+  body {
+    font-size: 14px;
+    line-height: 23px;
+  }
+}
+
+@media (max-width: @mobile-width-4) {
+  body {
+    font-size: 12px;
+    line-height: 20px;
+  }
+}
+
+@media (orientation: landscape) and (max-height: @note-height) and (min-width: @tablet-width) {
+  body {
+    font-size: 13px;
+    line-height: 20px;
+  }
+}

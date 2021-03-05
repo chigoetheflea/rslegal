@@ -1,0 +1,149 @@
+.site-footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 50px 100px;
+
+  color: #fff;
+  background-color: @black;
+}
+
+.site-footer__column {
+  flex-basis: 33.33%;
+
+  &--right {
+    text-align: right;
+  }
+}
+
+.site-footer__contacts {
+  display: flex;
+  flex-direction: column;
+}
+
+.site-footer__phone,
+.site-footer__email {
+  color: #fff;
+
+  &:hover,
+  &:focus {
+    color: @red-2;
+  }
+
+  &:active {
+    color: @red-3;
+  }
+}
+
+.site-footer__phone {
+  font-weight: 700;
+  font-size: 24px;
+}
+
+.site-footer__email {
+  margin-top: 5px;
+}
+
+.site-footer__address {
+  margin-top: 15px;
+  font-size: 12px;
+  font-style: normal;
+}
+
+.site-footer__copyright {
+  text-align: center;
+}
+
+.site-footer__button {
+  display: inline-block;
+  position: relative;
+  padding: 15px 20px 15px 50px;
+
+  color: #fff;
+
+  border-right: 2px solid #fff;
+  overflow: hidden;
+
+  &::before {
+    .transition();
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    border: 2px solid #fff;
+    border-left-width: 3px;
+    transform-origin: 0 0;
+    transform: skew(30deg);
+
+    content: "";
+  }
+
+  &:hover,
+  &:focus {
+    color: @red-2;
+    border-color: @red-2;
+
+    &::before {
+      border-color: @red-2;
+    }
+  }
+}
+
+@media (max-width: @desktop-width) {
+  .site-footer {
+    padding: 40px 60px;
+  }
+}
+
+@media (max-width: @tablet-width-2) {
+  .site-footer {
+    flex-direction: column;
+  }
+
+  .site-footer__copyright {
+    order: 1;
+  }
+
+  .site-footer__contacts {
+    text-align: center;
+  }
+
+  .site-footer__column {
+    &--right {
+      text-align: center;
+    }
+  }
+
+  .site-footer__column--margin-top {
+    margin-top: 30px;
+  }
+
+  .site-footer__email {
+    margin-top: 15px;
+    font-size: 20px;
+  }
+
+  .site-footer__button {
+    padding: 25px 35px;
+    font-size: 20px;
+    border: 2px solid #ffffff;
+
+    &::before {
+      display: none;
+    }
+  }
+}
+
+@media (max-width: @mobile-width) {
+  .site-footer {
+    padding: 30px;
+  }
+
+  .site-footer__button {
+    width: 100%;
+    padding: 25px 0;
+  }
+}

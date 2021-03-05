@@ -1,0 +1,71 @@
+.screen-layout-1 {
+  background-size: cover;
+  background-position: 0 50%;
+}
+
+.screen-layout-1__subtitle {
+  margin: 0;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.screen-layout-1__title {
+  margin-top: 30px;
+}
+
+.screen-layout-1__content {
+  margin-top: 50px;
+}
+
+@media (max-width: @desktop-width) {
+  .screen-layout-1 {
+    background-position: 40% 50%;
+  }
+
+  .screen-layout-1__title {
+    margin-top: 15px;
+  }
+
+  .screen-layout-1__content {
+    margin-top: 30px;
+  }
+}
+
+@media (max-width: @tablet-width) {
+  .screen-layout-1__content-column {
+    padding-bottom: 170px;
+  }
+}
+
+@media (max-width: @tablet-width-2) {
+  .screen-layout-1 {
+    background-image: none !important;
+    background-color: @brown-1;
+  }
+}
+
+@media (max-width: @mobile-width) {
+  .screen-layout-1__content-column {
+    padding-bottom: 100px;
+  }
+}
+
+@media (max-width: @mobile-width-4) {
+  .screen-layout-1__content-column {
+    padding-bottom: 150px;
+  }
+}
+
+@media (orientation: landscape) and (max-height: @note-height) and (min-width: @tablet-width) {
+  .screen-layout-1__title {
+    margin-top: 15px;
+  }
+
+  .screen-layout-1__content {
+    margin-top: 30px;
+  }
+
+  .screen-layout-1__content-column {
+    flex-basis: 65%;
+  }
+}
